@@ -174,6 +174,7 @@ export const getSurveillanceReports = async (req: Request, res: Response): Promi
         if (!diseaseMap.has(d.report_id)) diseaseMap.set(d.report_id, []);
         diseaseMap.get(d.report_id)!.push({
           ...d,
+          name: d.disease_name,
           under5_male,
           under5_female,
           above5_male,
