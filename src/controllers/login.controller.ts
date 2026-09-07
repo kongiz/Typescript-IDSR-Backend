@@ -122,7 +122,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       env.JWT_REFRESH_SECRET
     );
 
-    const [hashedRefresh] = await bcrypt.hash(refreshToken, 10);
+    const hashedRefresh = await bcrypt.hash(refreshToken, 10);
 
     const expiryDate = new Date(Date.now() + refreshExpirySeconds * 1000);
 
